@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/styles.scss">
+     <link rel="stylesheet" href="/src/styles/mediaqueries.scss">
+    <title>Test-task</title>
+  </head>
+  <body>
+    <div class="contacts-page">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar_header">
+          <h2 class="sidebar_title">Группы контактов</h2>
+          <button class="sidebar_close" id="closeSideBar">
+            <img src="src/img/close.svg" alt="close">
+          </button>
+        </div>
+        <hr class="sidebar_line">
+        <ul class="group-list">
+          <li class="group-list_item" data-group-id="1">
+            <input type="text" class="group-list_input" placeholder="Друзья" />
+            <button class="group-list_delete" >
+              <img src="/src/img/delete.svg" alt="delete">
+            </button>
+          </li>
+          <li class="group-list_item" data-group-id="2">
+            <input type="text" class="group-list_input" placeholder="Коллеги" />
+            <button class="group-list_delete">
+              <img src="/src/img/delete.svg" alt="delete">
+            </button>
+          </li>
+        </ul>
+
+        <div class="sidebar_footer">
+          <button class="sidebar_button sidebar_button--add">Добавить</button>
+          <button class="sidebar_button sidebar_button--save">Сохранить</button>
+        </div>
+      </aside>
+
+      <aside class="sidebar sidebar--contact" id="contactSidebar">
+        <div class="sidebar_header">
+          <h2 class="sidebar_title">Добавить контакт</h2>
+          <button class="sidebar_close" id="closeContactSidebar">
+            <img src="src/img/close.svg" alt="close">
+          </button>
+        </div>
+        <hr class="sidebar_line">
+        <div class="sidebar_contact-form">
+          <div class="sidebar_input-group">
+            <input type="text" class="sidebar_input" id="contactName" placeholder="Введите ФИО">
+            <div class="sidebar_error-text hidden" id="nameError">Поле является обязательным</div>
+          </div>
+          <div class="sidebar_input-group">
+            <input type="text" class="sidebar_input" id="contactPhone" placeholder="Введите номер">
+            <div class="sidebar_error-text hidden" id="phoneError">Поле является обязательным</div>
+          </div>
+          <div class="sidebar_dropdown" id="groupDropdown">
+            <button class="sidebar_dropdown-button" id="dropdownButton">Выберите группу
+              <span class="dropdown-arrow"></span>
+            </button>
+            <ul class="sidebar_dropdown-list hidden" id="dropdownList"></ul>
+          </div>
+        </div>
+        <button class="sidebar_button sidebar_button--save-contact" id="saveContact">Сохранить</button>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="topbar_contact">
+            <img src="./src/img/contact-book.svg" alt="contact-book">
+            <h1 class="topbar_title">Книга контактов</h1>
+          </div>
+          <div class="topbar_actions">
+            <button class="topbar_button topbar_button--add">
+              <img src="/src/img/Add.svg" alt="плюс" class="topbar_plus">
+              Добавить контакт
+            </button>
+            <button class="topbar_button topbar_button--groups" id="openSidebar">Группы</button>
+          </div>
+        </header>
+
+        <div id="contactGroupsContainer">
+          </div>
+
+        <div class="modal hidden" id="confirmModal">
+          <div class="modal-content">
+            <img class="modal-close" src="src/img/close2.svg" alt="close" id="modal-close">
+            <h3 class="modal-title">Удалить группу?</h3>
+            <p class="modal-text">Удаление группы повлечет за собой удаление контактов связанных с этой группой</p>
+            <div class="modal-actions">
+              <button class="modal-button modal-button--confirm" id="confirmDelete">Да, удалить</button>
+              <button class="modal-button modal-button--cancel" id="cancelDelete">Отмена</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
