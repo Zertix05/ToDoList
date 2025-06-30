@@ -154,7 +154,7 @@ function createGroupElement(group: { id: number; name: string }): HTMLLIElement 
 
     const deleteBtn = document.createElement('button');
     deleteBtn.className = 'group-list_delete';
-    deleteBtn.innerHTML = '<img src="/src/img/delete.svg" alt="delete">';
+    deleteBtn.innerHTML = '<img src="/img/delete.svg" alt="delete">';
 
     // Attach delete event listener directly to the created button
     deleteBtn.addEventListener('click', () => {
@@ -266,10 +266,10 @@ function renderContacts(): void {
                     <span class="contact-item_phone">${contact.phone}</span>
                     <div class="contact-item_actions">
                         <button class="contact-item_button contact-item_button--edit">
-                          <img src="src/img/edit.svg" alt="edit">
+                          <img src="/img/edit.svg" alt="edit">
                         </button>
                         <button class="contact-item_button contact-item_button--delete">
-                          <img src="src/img/delete.svg" alt="delete">
+                          <img src="/img/delete.svg" alt="delete">
                         </button>
                     </div>
                     </span>
@@ -284,9 +284,9 @@ function renderContacts(): void {
                       const isActive = deleteContactBtn.classList.toggle('active');
 
                       if (isActive) {
-                          img.src = 'src/img/delete-active.svg'; // путь к иконке активного состояния
+                          img.src = '/img/delete-active.svg'; // путь к иконке активного состояния
                       } else {
-                          img.src = 'src/img/delete.svg'; // вернуть стандартную иконку
+                          img.src = '/img/delete.svg'; // вернуть стандартную иконку
                       }
 
                       openModal();
@@ -301,9 +301,9 @@ function renderContacts(): void {
                       const isActive = editContactBtn.classList.toggle('active');
 
                       if (isActive) {
-                        img.src = 'src/img/edit-active.svg'; // иконка для активного состояния
+                        img.src = '/img/edit-active.svg'; // иконка для активного состояния
                       } else {
-                        img.src = 'src/img/edit.svg'; // вернуть стандартную иконку
+                        img.src = '/img/edit.svg'; // вернуть стандартную иконку
                       }
                     });
 
@@ -384,9 +384,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const isActive = closebtn.classList.toggle('active');
 
             if (isActive) {
-              img.src = 'src/img/close-active.svg';
+              img.src = '/';
             } else {
-              img.src = 'src/img/close.svg';
+              img.src = '/img/close.svg';
             }
     });
 
